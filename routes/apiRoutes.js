@@ -1,6 +1,6 @@
 const fs = require("fs");
 const data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
-const { v4: uuidv } = require('uuid');
+const { v4: uuidv4 } = require('uuid');
 
 module.exports = (app) => {
     app.get("/api/notes", (req, res) => {
