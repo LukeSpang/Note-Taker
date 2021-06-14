@@ -64,6 +64,11 @@ app.delete("/api/notes/:id", function (req, res){
             else{
                 console.log("Your Note was deleted from db.json");
             }
-        })
-    })
-})
+        });
+        res.json(stringifyNote);
+    });
+});
+
+app.get("*", function (req, res){
+    res.sendFile(path.join(__dirname, "public/index.html"));
+});
