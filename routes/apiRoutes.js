@@ -7,9 +7,9 @@ module.exports = (app) => {
         res.json(data);
     });
     app.get("/api/notes/:id", (req, res) => {
-        res.json(data);
+        res.json(data[Number(req.params.id)]);
     });
-    app.post("/api/notes/:id", (req, res) => {
+    app.post("/api/notes", (req, res) => {
         let note = req.body;
         let uniqueID = data.length;
         console.log(uniqueID);
